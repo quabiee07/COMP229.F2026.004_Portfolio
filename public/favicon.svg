@@ -1,0 +1,16 @@
+<!-- Custom circular mark with initials KI (original; not affiliated with any brand) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">KI Portfolio Logo</title>
+  <desc id="logoDesc">Black circle containing the initials K I</desc>
+  <circle cx="32" cy="32" r="32" fill="#0A0A0A"/>
+  <text
+    x="32"
+    y="38"
+    text-anchor="middle"
+    font-family="'Plus Jakarta Sans', Arial, sans-serif"
+    font-size="18"
+    font-weight="700"
+    fill="#FFFFFF"
+    letter-spacing="0.5"
+  >KI</text>
+</svg>

@@ -1,0 +1,12 @@
+<!-- Grayscale portrait placeholder until a real headshot is added -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8d8d8"/>
+      <stop offset="100%" stop-color="#9a9a9a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#bg)"/>
+  <ellipse cx="400" cy="340" rx="150" ry="170" fill="#6e6e6e"/>
+  <path d="M160 1000 C180 680 280 560 400 560 C520 560 620 680 640 1000 Z" fill="#5a5a5a"/>
+</svg>
