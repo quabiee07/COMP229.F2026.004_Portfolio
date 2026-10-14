@@ -1,6 +1,7 @@
 const Model = require('../models/project');
 const { formatObject } = require('../utils/util_functions');
 
+//Fetch all projects
 async function getProjects(req, res, next) {
     try {
         const projects = await Model.find();
@@ -14,6 +15,7 @@ async function getProjects(req, res, next) {
     }
 }
 
+// Fetch a single project by ID
 async function getProjectById(req, res, next) {
     try {
         const project = await Model.findById(req.params.id);
@@ -34,6 +36,7 @@ async function getProjectById(req, res, next) {
     }
 }
 
+// Create a new project
 async function createProject(req, res, next) {
     try {
         const project = await Model.create(req.body);
@@ -47,7 +50,7 @@ async function createProject(req, res, next) {
     }
 }
 
-
+// Update an existing project by ID
 async function updateProject(req, res, next) {
     try {
         const project = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
@@ -65,7 +68,7 @@ async function updateProject(req, res, next) {
         next(error);
     }
 }
-
+// Delete a project by ID
 async function deleteProject(req, res, next) {
     try {
         const project = await Model.findByIdAndDelete(req.params.id);

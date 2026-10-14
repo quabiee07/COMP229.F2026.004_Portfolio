@@ -1,6 +1,7 @@
 const Model = require('../models/user');
 const { formatObject } = require('../utils/util_functions');
 
+// Fetch all users
 async function getUsers(req, res, next) {
     try {
         const users = await Model.find();
@@ -14,6 +15,8 @@ async function getUsers(req, res, next) {
     }
 }
 
+
+// Fetch a single user by ID
 async function getUserById(req, res, next) {
     try {
         const user = await Model.findById(req.params.id);
@@ -34,6 +37,7 @@ async function getUserById(req, res, next) {
     }
 }
 
+// Create a new user
 async function createUser(req, res, next) {
     try {
         const user = await Model.create(req.body);
@@ -47,7 +51,7 @@ async function createUser(req, res, next) {
     }
 }
 
-
+// Update an existing user by ID
 async function updateUser(req, res, next) {
     try {
         const user = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
@@ -66,6 +70,7 @@ async function updateUser(req, res, next) {
     }
 }
 
+// Delete a user by ID
 async function deleteUser(req, res, next) {
     try {
         const user = await Model.findByIdAndDelete(req.params.id);

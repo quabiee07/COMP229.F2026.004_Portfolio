@@ -1,6 +1,7 @@
 const Model = require('../models/reference');
 const { formatObject } = require('../utils/util_functions');
 
+//Fetch all references
 async function getReferences(req, res, next) {
     try {
         const references = await Model.find();
@@ -13,7 +14,7 @@ async function getReferences(req, res, next) {
         next(error);
     }
 }
-
+// Fetch a single reference by ID
 async function getReferenceById(req, res, next) {
     try {
         const reference = await Model.findById(req.params.id);
@@ -33,7 +34,7 @@ async function getReferenceById(req, res, next) {
         next(error);
     }
 }
-
+// Create a new reference
 async function createReference(req, res, next) {
     try {
         const reference = await Model.create(req.body);
@@ -47,7 +48,7 @@ async function createReference(req, res, next) {
     }
 }
 
-
+// Update an existing reference by ID
 async function updateReference(req, res, next) {
     try {
         const reference = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
@@ -65,7 +66,7 @@ async function updateReference(req, res, next) {
         next(error);
     }
 }
-
+// Delete a reference by ID
 async function deleteReference(req, res, next) {
     try {
         const reference = await Model.findByIdAndDelete(req.params.id);

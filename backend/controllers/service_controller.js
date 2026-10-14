@@ -1,6 +1,7 @@
 const Model = require('../models/service');
 const { formatObject } = require('../utils/util_functions');
 
+//Fetch all services
 async function getServices(req, res, next) {
     try {
         const services = await Model.find();
@@ -14,6 +15,7 @@ async function getServices(req, res, next) {
     }
 }
 
+// Fetch a single service by ID
 async function getServiceById(req, res, next) {
     try {
         const service = await Model.findById(req.params.id);
@@ -34,6 +36,7 @@ async function getServiceById(req, res, next) {
     }
 }
 
+// Create a new service
 async function createService(req, res, next) {
     try {
         const service = await Model.create(req.body);
@@ -47,7 +50,7 @@ async function createService(req, res, next) {
     }
 }
 
-
+// Update an existing service by ID
 async function updateService(req, res, next) {
     try {
         const service = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
@@ -66,6 +69,7 @@ async function updateService(req, res, next) {
     }
 }
 
+// Delete a service by ID
 async function deleteService(req, res, next) {
     try {
         const service = await Model.findByIdAndDelete(req.params.id);

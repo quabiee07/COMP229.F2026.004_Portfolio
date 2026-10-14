@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Defined the schema for the User model
 const userSchema = new mongoose.Schema({
     firstname: String,
     lastname: String,
@@ -8,7 +9,7 @@ const userSchema = new mongoose.Schema({
     created: {
         type: Date,
         default: Date.now
-        
+
     },
     updated: {
         type: Date,

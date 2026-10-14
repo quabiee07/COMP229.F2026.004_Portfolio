@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Defined the schema for the Reference model
 const referenceSchema = new mongoose.Schema({
     name: String,
     testimonial: String,
