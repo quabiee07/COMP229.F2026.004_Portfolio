@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 
-/**
- * Dark site footer with compact nav and large email contact cue.
- */
+// Dark site footer with compact nav and large email contact cue.
+ 
 function Footer() {
   const currentYear = new Date().getFullYear();
 

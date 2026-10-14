@@ -13,7 +13,7 @@ const NAV_ITEMS = [
 ];
 
 /**
- * Sticky site header with logo, page links, and contact CTA.
+ * I used a Sticky site header with logo, page links, and contact CTA.
  * Menu open state is tied to the current path so route changes close it
  * without an effect.
  */

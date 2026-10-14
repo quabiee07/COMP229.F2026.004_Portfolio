@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import portraitImage from "../assets/images/Ebuka.JPG";
-import projectThumbA from "../assets/images/project-thumb-a.svg";
-import projectThumbB from "../assets/images/project-thumb-b.svg";
-import projectThumbC from "../assets/images/project-thumb-c.svg";
+import projectThumbA from "../assets/images/stela-screenshot.jpg";
+import projectThumbB from "../assets/images/Bosscab-agent-screenshot.jpg";
+import projectThumbC from "../assets/images/my-cross-river-screenshot.jpg";
 import {
   clearContactSubmission,
   readContactSubmission,
@@ -11,19 +11,19 @@ import {
 
 const FEATURED_WORKS = [
   {
-    title: "Fintech wallet app",
-    category: "React Native",
+    title: "Stela AI",
+    category: "Flutter",
     meta: "Mobile",
     image: projectThumbA,
   },
   {
-    title: "Health tracking client",
+    title: "Ride Hailing Agent",
     category: "Swift",
     meta: "iOS",
     image: projectThumbB,
   },
   {
-    title: "Field ops companion",
+    title: "My Cross River",
     category: "Kotlin",
     meta: "Android",
     image: projectThumbC,
