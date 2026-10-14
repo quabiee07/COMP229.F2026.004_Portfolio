@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import projectThumbA from "../assets/images/project-thumb-a.svg";
-import projectThumbB from "../assets/images/project-thumb-b.svg";
-import projectThumbC from "../assets/images/project-thumb-c.svg";
+import projectThumbA from "../assets/images/stela-screenshot.jpg";
+import projectThumbB from "../assets/images/Bosscab-agent-screenshot.jpg";
+import projectThumbC from "../assets/images/my-cross-river-screenshot.jpg";
 
 /**
  * Highlighted mobile projects — each includes title, image, description,
@@ -9,21 +9,21 @@ import projectThumbC from "../assets/images/project-thumb-c.svg";
  */
 const PROJECTS = [
   {
-    title: "Fintech wallet app",
+    title: "Stela AI",
     image: projectThumbA,
     imageAlt: "Abstract preview of a fintech wallet mobile interface",
     description:
       "A cross-platform wallet for everyday transfers and balance tracking. Built with a modular feature structure so new payment methods can ship without rewriting core flows.",
-    role: "Lead Mobile Engineer — owned React Native architecture, secure storage, and release cadence.",
+    role: "Lead Mobile Engineer — owned Flutter architecture, secure storage, and release cadence.",
     outcome:
       "Shipped to production with crash-free sessions above 99.5% in the first quarter after launch.",
     completedOn: "March 2025",
-    tags: ["React Native", "TypeScript", "Fintech"],
+    tags: ["Flutter", "Dart", "Rest API"],
   },
   {
-    title: "Health tracking client",
+    title: "Ride Hailing Agent",
     image: projectThumbB,
-    imageAlt: "Abstract preview of a health tracking iOS app",
+    imageAlt: "Abstract preview of a ride hailing iOS app",
     description:
       "An iOS client for logging activity, syncing wearable data, and surfacing weekly trends. Focused on offline-first storage and clear accessibility for daily use.",
     role: "iOS Engineer — SwiftUI screens, HealthKit integration, and background sync.",
@@ -33,7 +33,7 @@ const PROJECTS = [
     tags: ["Swift", "SwiftUI", "HealthKit"],
   },
   {
-    title: "Field ops companion",
+    title: "My Cross River",
     image: projectThumbC,
     imageAlt: "Abstract preview of a field operations Android app",
     description:

@@ -1,10 +1,8 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Catches render errors so a single page failure does not blank the whole app.
- * Required for assignment QA: keep the site functional when issues occur.
- */
+// Catches render errors so a single page failure does not blank the whole app.
+ 
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);

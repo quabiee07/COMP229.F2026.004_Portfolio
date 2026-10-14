@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import portraitImage from "../assets/images/Ebuka.JPG";
-import resumePdf from "../assets/documents/Kingsley_Ihekwaba_Resume.pdf";
+import resumePdf from "../assets/documents/Kingsley_Ebuka_Ihekwaba_CV.pdf";
 
 const EXPERIENCES = [
   {
@@ -25,7 +25,7 @@ const EXPERIENCES = [
 
 /**
  * About Me — legal name, portrait, bio, resume PDF, and experience list.
- * Written to stay clean and employer-ready.
+ * Written to stay clean and employer ready.
  */
 function About() {
   return (
