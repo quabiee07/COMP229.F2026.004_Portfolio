@@ -40,8 +40,10 @@ app.use((err, req, res, next) => {
     });
 });
 
+//This connects to the database 
 connectDatabase();
 
+//This starts the server and listens on port 3000
 app.listen(3000, () => {
     console.log(`Server running at http://localhost:3000/`);
 });

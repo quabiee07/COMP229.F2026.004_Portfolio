@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/reference_controller');
 
+// Defined routes for reference-related operations
 router.get('/', controller.getReferences);
 router.get('/:id', controller.getReferenceById);
 router.post('/', controller.createReference);

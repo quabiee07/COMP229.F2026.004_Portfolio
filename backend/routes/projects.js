@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/project_controller');
 
+// Defined routes for project-related operations
 router.get('/', controller.getProjects);
 router.get('/:id', controller.getProjectById);
 router.post('/', controller.createProject);
