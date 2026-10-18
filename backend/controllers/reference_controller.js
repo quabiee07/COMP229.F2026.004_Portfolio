@@ -43,6 +43,7 @@ async function createReference(req, res, next) {
             message: "Reference added successfully",
             data: formatObject(reference),
         });
+        reference.set
     } catch (error) {
         next(error);
     }

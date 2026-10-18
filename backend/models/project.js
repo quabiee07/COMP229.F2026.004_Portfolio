@@ -7,7 +7,16 @@ const projectSchema = new mongoose.Schema({
     description: String,
     image: String,
 
+}, { collection: 'projects' }); // Specify the collection name
+
+projectSchema.set('toJSON', {
+    virtuals: true,
+    versionKey: false,
+    transform: (document, returnedObject) => {
+        delete returnedObject._id;
+    }
 });
+
 
 const Project = mongoose.model('Project', projectSchema);
 module.exports = Project;
