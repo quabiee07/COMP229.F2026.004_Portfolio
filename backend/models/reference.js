@@ -6,6 +6,14 @@ const referenceSchema = new mongoose.Schema({
     testimonial: String,
     position : String,
     company: String,
+}, { collection: 'references' }); // Specify the collection name
+
+referenceSchema.set('toJSON', {
+      virtuals: true,
+    versionKey: false,
+    transform: (document, returnedObject) => {
+        delete returnedObject._id;
+    }
 });
 
 const Reference = mongoose.model('Reference', referenceSchema);
