@@ -14,6 +14,7 @@ projectSchema.set('toJSON', {
     versionKey: false,
     transform: (document, returnedObject) => {
         delete returnedObject._id;
+        delete returnedObject.__v;
     }
 });
 
