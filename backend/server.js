@@ -5,10 +5,12 @@ const morgan = require('morgan');
 const cors = require('cors');
 const connectDatabase = require('./config/database');
 const app = express();
+const indexRoutes = require('./routes/index');
 const userRoutes = require('./routes/user');
 const serviceRoutes = require('./routes/services');
 const referenceRoutes = require('./routes/references');
 const projectRoutes = require('./routes/projects');
+
 
 //This logs each request to the console
 app.use(morgan('dev'));
@@ -18,7 +20,7 @@ app.use(cors());
 
 //This allows the server to accept JSON data in the request body
 app.use(express.json());
-
+app.use('/', indexRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/services', serviceRoutes);
 app.use('/api/references', referenceRoutes);
