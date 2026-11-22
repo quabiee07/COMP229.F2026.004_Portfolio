@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { to: "/services", label: "Services" },
   { to: "/references", label: "References" },
   { to: "/contact", label: "Contact" },
+  { to: "/admin", label: "Admin Dashboard" },
 ];
 
 /**

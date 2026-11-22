@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import References from "./pages/References";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AdminDashboard from "./pages/AdminDashboard";
 import "./css/styles.css";
 
 /**
@@ -28,6 +29,8 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="references" element={<References />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="admin" element={<AdminDashboard />} />
+            
             {/* Unknown paths show a friendly fallback instead of a blank screen */}
             <Route path="*" element={<NotFound />} />
           </Route>
