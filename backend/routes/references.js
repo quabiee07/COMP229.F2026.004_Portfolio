@@ -6,7 +6,7 @@ const controller = require('../controllers/reference_controller');
 router.get('/', controller.getReferences);
 router.get('/:id', controller.getReferenceById);
 router.post('/', controller.createReference);
-router.put('/:id', controller.updateReference);
+router.patch('/:id', controller.updateReference);
 router.delete('/:id', controller.deleteReference);
 
 module.exports = router;

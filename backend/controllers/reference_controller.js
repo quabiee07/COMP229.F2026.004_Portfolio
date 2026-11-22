@@ -52,7 +52,7 @@ async function createReference(req, res, next) {
 // Update an existing reference by ID
 async function updateReference(req, res, next) {
     try {
-        const reference = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
+        const reference = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!reference) {
             return res.status(404).json({
                 success: false,

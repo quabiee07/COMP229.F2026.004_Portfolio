@@ -53,7 +53,7 @@ async function createProject(req, res, next) {
 // Update an existing project by ID
 async function updateProject(req, res, next) {
     try {
-        const project = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
+        const project = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!project) {
             return res.status(404).json({
                 success: false,

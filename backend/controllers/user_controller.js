@@ -54,7 +54,7 @@ async function createUser(req, res, next) {
 // Update an existing user by ID
 async function updateUser(req, res, next) {
     try {
-        const user = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
+        const user = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!user) {
             return res.status(404).json({
                 success: false,

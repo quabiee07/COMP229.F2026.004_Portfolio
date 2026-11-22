@@ -53,7 +53,7 @@ async function createService(req, res, next) {
 // Update an existing service by ID
 async function updateService(req, res, next) {
     try {
-        const service = await Model.findOneAndReplace({ _id: req.params.id }, req.body);
+        const service = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
         if (!service) {
             return res.status(404).json({
                 success: false,

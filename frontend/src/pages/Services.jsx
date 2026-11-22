@@ -3,6 +3,10 @@ import serviceIos from "../assets/images/service-ios.svg";
 import serviceAndroid from "../assets/images/service-android.svg";
 import serviceCross from "../assets/images/service-cross.svg";
 import servicePerformance from "../assets/images/service-performance.svg";
+import { useResource } from "../hooks/useResource";
+
+const SERVICE_ICONS = [serviceIos, serviceAndroid, serviceCross, servicePerformance];
+
 
 /**
  * Services offered as a mobile engineer — title + description (+ image)
@@ -40,6 +44,7 @@ const SERVICES = [
 ];
 
 function Services() {
+  const { items: services, loading, error } = useResource("services");
   return (
     <main>
       <header className="page-hero">
@@ -66,12 +71,12 @@ function Services() {
           </div>
 
           <div className="service-grid">
-            {SERVICES.map((service) => (
-              <article className="service-card" key={service.title}>
+            {services.map((service, index) => (
+              <article className="service-card" key={service.id}>
                 <div className="service-card-media">
                   <img
-                    src={service.image}
-                    alt={service.imageAlt}
+                    src={SERVICE_ICONS[index % SERVICE_ICONS.length]}
+                    alt=""
                     width="800"
                     height="560"
                   />

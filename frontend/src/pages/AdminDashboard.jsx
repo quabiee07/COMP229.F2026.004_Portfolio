@@ -1,36 +1,85 @@
 import { Link } from "react-router-dom";
+import {
+  ADMIN_SECTION_ORDER,
+  RESOURCES,
+} from "../constants/adminResources";
+import { useResource } from "../hooks/useResource";
 
-const ADMIN_LINKS = [
-    { to: "/admin/projects", label: "Manage Projects", description: "Add, edit and remove projects." },
-    { to: "/admin/services", label: "Manage Services", description: "Maintain the services you offer." },
-    { to: "/admin/references", label: "Manage References", description: "Update testimonials and references." },
-    { to: "/admin/users", label: "Manage Users", description: "Maintain user accounts." },
-];
+function AdminSectionCard({ resourceKey, index }) {
+  const config = RESOURCES[resourceKey];
+  const { items, loading, error } = useResource(resourceKey);
+  const count = loading ? "—" : error ? "!" : items.length;
+
+  return (
+    <Link className="admin-card admin-section-card" to={`/admin/${resourceKey}`}>
+      <span className="admin-card-top">
+        <span className="admin-card-index">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="admin-card-arrow" aria-hidden="true">
+          ↗
+        </span>
+      </span>
+      <h3>{config.label}</h3>
+      <p>{config.description}</p>
+      <span className="admin-card-meta">
+        <strong>{count}</strong>
+        <span>{config.singular.toLowerCase()} records</span>
+      </span>
+    </Link>
+  );
+}
 
 function AdminDashboard() {
-    return (
-        <main>
-            <header className="page-hero">
-                <p className="section-label">Admin</p>
-                <h1 className="section-title">Dashboard</h1>
-                <p className="page-hero-lead">Choose a section to manage</p>
-            </header>
-            <div className="site-main">
-                <section className="section-block" aria-labelledby="admin-heading">
-                    <h2 className="section-title" id="admin-heading">Manage content</h2>
-                    <div className="service-grid">
-                        {ADMIN_LINKS.map(({ to, label, description }) => (
-                            <Link className="service-card" to={to} key={to}>
-                                <h3 className="service-card-title">{label}</h3>
-                                <p className="service-card-description">{description}</p>
-                            </Link>
-                        ))}
-                    </div>
-                </section>
-            </div>
+  return (
+    <>
+      <header className="admin-page-head">
+        <div>
+          <p className="admin-eyebrow">Overview</p>
+          <h1 className="admin-page-title">Content dashboard</h1>
+          <p className="admin-page-lead">
+            Manage the data that powers your public portfolio. Every change is
+            sent through the API and stored in the database.
+          </p>
+        </div>
+        <Link className="admin-button admin-button-primary" to="/admin/projects/new">
+          New project
+        </Link>
+      </header>
 
-        </main>
-    );
+      <section className="admin-section" aria-labelledby="admin-sections-title">
+        <div className="admin-section-head">
+          <div>
+            <h2 id="admin-sections-title">Sections</h2>
+            <p>Four collections, one workspace.</p>
+          </div>
+        </div>
+
+        <div className="admin-card-grid">
+          {ADMIN_SECTION_ORDER.map((resourceKey, index) => (
+            <AdminSectionCard
+              key={resourceKey}
+              resourceKey={resourceKey}
+              index={index}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="admin-hint" aria-label="How the workspace works">
+        <div>
+          <h3>Connected end to end</h3>
+          <p>Your admin edits and the public pages share one source of truth.</p>
+        </div>
+        <div className="admin-hint-steps">
+          <span>01 Edit here</span>
+          <span>02 Backend API</span>
+          <span>03 MongoDB</span>
+          <span>04 Live site</span>
+        </div>
+      </section>
+    </>
+  );
 }
 
 export default AdminDashboard;

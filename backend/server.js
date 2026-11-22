@@ -19,7 +19,7 @@ app.use(morgan('dev'));
 app.use(cors());
 
 //This allows the server to accept JSON data in the request body
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 app.use('/', indexRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/services', serviceRoutes);

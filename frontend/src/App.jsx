@@ -9,7 +9,10 @@ import Services from "./pages/Services";
 import References from "./pages/References";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import AdminLayout from "./components/admin/AdminLayout";
 import AdminDashboard from "./pages/AdminDashboard";
+import ResourceManager from "./pages/admin/ResourceManager";
+
 import "./css/styles.css";
 
 /**
@@ -29,8 +32,13 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="references" element={<References />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="admin" element={<AdminDashboard />} />
-            
+            <Route path="admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path=":resource" element={<ResourceManager />} />
+              <Route path=":resource/new" element={<ResourceManager mode="new" />} />
+              <Route path=":resource/:id/edit" element={<ResourceManager mode="edit" />} />
+            </Route>
+
             {/* Unknown paths show a friendly fallback instead of a blank screen */}
             <Route path="*" element={<NotFound />} />
           </Route>

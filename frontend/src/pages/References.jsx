@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useResource } from "../hooks/useResource";
+
 
 /**
  * Testimonials — each entry includes name, company, position, and quote
@@ -29,6 +31,7 @@ const REFERENCES = [
 ];
 
 function References() {
+  const { items: references, loading, error } = useResource("references");
   return (
     <main>
       <header className="page-hero">
@@ -55,8 +58,8 @@ function References() {
           </div>
 
           <div className="reference-grid">
-            {REFERENCES.map((reference) => (
-              <article className="reference-card" key={reference.name}>
+            {references.map((reference) => (
+              <article className="reference-card" key={reference.id}>
                 <p className="reference-quote">“{reference.testimonial}”</p>
                 <div className="reference-meta">
                   <p className="reference-name">{reference.name}</p>
